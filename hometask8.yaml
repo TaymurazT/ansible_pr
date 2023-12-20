@@ -1,0 +1,40 @@
+---
+- name: provisioning builder
+  hosts: builder
+  become: yes
+
+  tasks:
+  - name: Ensure jdk package is present
+    apt:
+     name: default-jdk
+     state: present
+  
+  - name: Ensure maven package is present
+    apt:
+     name: maven
+     state: present
+
+  - name: Ensure git package is present
+    apt:
+     name: git
+     state: present
+
+- name: provisioning prod
+  hosts: prod
+  become: yes
+
+  tasks: 
+  - name: Ensure tomcat package is present
+    apt:
+     name: tomcat9
+     state: present
+
+  - name: Ensure LoginWebApp.war is present
+    copy:
+     src: LoginWebApp.war
+     dest: /usr/local/tomcat9/webapps
+    
+  - name: Ensure tomcat service is started
+    service:
+     name: tomcat
+     state: started
