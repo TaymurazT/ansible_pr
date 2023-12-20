@@ -21,7 +21,7 @@
   - name: clone java project
     git:
       repo: https://github.com/santoshkatageri/Java-Mysql-Simple-Login-Web-application.git
-      dest: /home/ubuntu/
+      dest: /home/ubuntu/jdk
       clone: yes
       update: yes
   - name: build app
