@@ -18,6 +18,18 @@
     apt:
      name: git
      state: present
+  - name: clone java project
+    git:
+      repo: https://github.com/santoshkatageri/Java-Mysql-Simple-Login-Web-application.git
+      dest: /home/ubuntu
+      clone: yes
+      update: yes
+  - name: build app
+    shell: cd /home/ubuntu/Java-Mysql-Simple-Login-Web-application ; chmod -R 777 ./;mvn package
+  - name: transport war 
+    copy:
+     src: /home/ubuntu/Java-Mysql-Simple-Login-Web-application/targer/LoginWebApp.war
+     dest: /home/ubuntu/ansible_pr
 
 - name: provisioning prod
   hosts: prod
