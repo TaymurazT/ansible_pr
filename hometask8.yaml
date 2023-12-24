@@ -43,10 +43,10 @@
      state: present
 
   - name: Ensure LoginWebApp.war is present
-    copy:
+    synchronize:
      src: LoginWebApp.war
      dest: /usr/local/tomcat9/webapps
-    
+     mode: pull
   - name: Ensure tomcat service is started
     service:
      name: tomcat
