@@ -30,7 +30,7 @@
     synchronize:
      src: /home/ubuntu/jdk/Login/targer/LoginWebApp.war
      dest: /home/ubuntu/
-     mode: push
+     mode: pull
     delegate.to: 37.139.33.6
 
 - name: provisioning prod
