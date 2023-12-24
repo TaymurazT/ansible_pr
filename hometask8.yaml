@@ -28,7 +28,7 @@
     shell: cd /home/ubuntu/jdk/Login; mvn package
   - name: transport war 
     synchronize:
-     src: /home/ubuntu/jdk/Login/targer/LoginWebApp.war
+     src: /home/ubuntu/jdk/Login/targer
      dest: /home/ubuntu/art
      mode: pull
     
@@ -45,7 +45,7 @@
 
   - name: Ensure LoginWebApp.war is present
     synchronize:
-     src: /home/ubuntu/art/LoginWebApp.war
+     src: /home/ubuntu/art/
      dest: /usr/local/tomcat9/webapps
      mode: pull
   - name: Ensure tomcat service is started
