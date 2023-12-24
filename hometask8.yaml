@@ -28,9 +28,12 @@
     shell: cd /home/ubuntu/jdk/Login; mvn package
 
   - name: transport war 
-    ansible.builtin.copy:
-      src: /home/ubuntu/jdk/Login/targer/LoginWebApp.war
-      dest: /home/ubuntu/art/LoginWebApp.war
+    synchronize:
+     src: /home/ubuntu/jdk/Login/targer/LoginWebApp.war
+     dest: /home/ubuntu/art
+     mode: push
+    delegate_to: 37.139.33.6
+     
      
      
     
