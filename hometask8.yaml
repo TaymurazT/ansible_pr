@@ -25,11 +25,12 @@
       clone: yes
       update: yes
   - name: build app
-     shell: cd /home/ubuntu/jdk/Login; mvn package
+    shell: cd /home/ubuntu/jdk/Login; mvn package
+
   - name: transport war 
     ansible.builtin.copy:
-     src: /home/ubuntu/jdk/Login/targer/LoginWebApp.war
-     dest: /home/ubuntu/art/LoginWebApp.war
+      src: /home/ubuntu/jdk/Login/targer/LoginWebApp.war
+      dest: /home/ubuntu/art/LoginWebApp.war
      
      
     
