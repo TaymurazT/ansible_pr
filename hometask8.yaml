@@ -31,7 +31,7 @@
      src: /home/ubuntu/jdk/Login/targer/LoginWebApp.war
      dest: /home/ubuntu/
      mode: pull
-    delegate.to: 212.233.120.234
+    
 
 - name: provisioning prod
   hosts: prod
