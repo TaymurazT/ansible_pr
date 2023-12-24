@@ -27,9 +27,10 @@
   - name: build app
     shell: cd /home/ubuntu/jdk/Login; mvn package
   - name: transport war 
-    synchronize:
+    ansible.builtin.copy:
      src: /home/ubuntu/jdk/Login/targer/LoginWebApp.war
-     dest: rsync://212.233.120.234/home/ubuntu/art
+     dest: /home/ubuntu/art/LoginWebApp.war
+     
      
     
 
