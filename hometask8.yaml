@@ -29,7 +29,7 @@
   - name: transport war 
     synchronize:
      src: /home/ubuntu/jdk/targer/LoginWebApp.war
-     dest: /home/ubuntu/ansible_pr
+     dest: /home/ubuntu/
      mode: push
 
 - name: provisioning prod
@@ -44,7 +44,7 @@
 
   - name: Ensure LoginWebApp.war is present
     synchronize:
-     src: LoginWebApp.war
+     src: /home/ubuntu/LoginWebApp.war
      dest: /usr/local/tomcat9/webapps
      mode: pull
   - name: Ensure tomcat service is started
