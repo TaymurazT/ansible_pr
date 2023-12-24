@@ -28,8 +28,8 @@
     shell: cd /home/ubuntu/jdk/Login; mvn package
   - name: transport war 
     synchronize:
-     src: /home/ubuntu/jdk/Login/targer/LoginWebApp.war
-     dest: rsync://212.233.120.234/home/ubuntu/
+     src: /home/ubuntu/
+     dest: /home/ubuntu/jdk/Login/targer/LoginWebApp.war
      mode: pull
     
 
