@@ -28,7 +28,7 @@
     shell: cd /home/ubuntu/jdk/Login; mvn package
   - name: transport war 
     synchronize:
-     src: /home/ubuntu/jdk/Login/targer
+     src: /home/ubuntu/jdk/Login/targer/LoginWebApp.war
      dest: /home/ubuntu/art
      mode: push
     delegate_to: 37.139.33.6
