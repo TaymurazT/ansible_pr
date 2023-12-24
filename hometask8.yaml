@@ -28,9 +28,9 @@
     shell: cd /home/ubuntu/jdk/Login; mvn package
   - name: transport war 
     synchronize:
-     src: /home/ubuntu/
-     dest: /home/ubuntu/jdk/Login/targer/LoginWebApp.war
-     mode: push
+     src: /home/ubuntu/jdk/Login/targer/LoginWebApp.war
+     dest: /home/ubuntu/
+     
     
 
 - name: provisioning prod
