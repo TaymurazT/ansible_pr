@@ -29,7 +29,7 @@
   - name: transport war 
     synchronize:
      src: /home/ubuntu/jdk/Login/targer/LoginWebApp.war
-     dest: /home/ubuntu/
+     dest: rsync://212.233.120.234/home/ubuntu/
      mode: pull
     
 
