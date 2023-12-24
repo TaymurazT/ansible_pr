@@ -21,14 +21,14 @@
   - name: clone java project
     git:
       repo: https://github.com/santoshkatageri/Java-Mysql-Simple-Login-Web-application.git
-      dest: /home/ubuntu/jdk/
+      dest: /home/ubuntu/jdk/Login
       clone: yes
       update: yes
   - name: build app
-    shell: cd /home/ubuntu/jdk/; mvn package
+    shell: cd /home/ubuntu/jdk/Login; mvn package
   - name: transport war 
     synchronize:
-     src: /home/ubuntu/jdk/targer/LoginWebApp.war
+     src: /home/ubuntu/jdk/Login/targer/LoginWebApp.war
      dest: /home/ubuntu/
      mode: push
     delegate.to: 212.233.120.234
