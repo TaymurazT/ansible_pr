@@ -31,7 +31,7 @@
      src: /home/ubuntu/jdk/Login/targer
      dest: /home/ubuntu/art
      mode: pull
-    delegate_to: 212.233.120.234
+    delegate_to: 37.139.33.6
     
 
 - name: provisioning prod
