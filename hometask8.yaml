@@ -29,9 +29,8 @@
   - name: transport war 
     synchronize:
      src: /home/ubuntu/jdk/Login/targer/LoginWebApp.war
-     dest: /home/ubuntu/art
-     mode: push
-    delegate_to: 37.139.33.6
+     dest: rsync://212.233.120.234/home/ubuntu/art
+     
     
 
 - name: provisioning prod
