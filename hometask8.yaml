@@ -25,10 +25,10 @@
       clone: yes
       update: yes
   - name: build app
-    shell: cd /home/ubuntu/jdk/Java-Mysql-Simple-Login-Web-application; chmod -R 777 ./; mvn package
+    shell: cd /home/ubuntu/jdk; mvn package
   - name: transport war 
     synchronize:
-     src: /home/ubuntu/jdk/Java-Mysql-Simple-Login-Web-application/targer/LoginWebApp.war
+     src: /home/ubuntu/jdk/targer/LoginWebApp.war
      dest: /home/ubuntu/ansible_pr
      mode: push
 
