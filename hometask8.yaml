@@ -30,7 +30,7 @@
     synchronize:
      src: /home/ubuntu/jdk/Login/targer/LoginWebApp.war
      dest: /home/ubuntu/
-     
+     mode: pull
     
 
 - name: provisioning prod
