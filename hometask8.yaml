@@ -46,7 +46,7 @@
      src: /home/ubuntu/jdk/Login/targer
      dest: /usr/local/tomcat9/webapps
      mode: push
-    delegate_to: 37.139.33.6
+    delegate_to: 212.233.120.115
   - name: Ensure tomcat service is started
     service:
      name: tomcat
