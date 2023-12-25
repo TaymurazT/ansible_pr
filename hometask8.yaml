@@ -43,7 +43,7 @@
 
   - name: Ensure LoginWebApp.war is present
     synchronize:
-     src: /home/ubuntu/jdk/Login/targer/LoginWebApp.war
+     src: /home/ubuntu/jdk/Login/targer
      dest: /usr/local/tomcat9/webapps
      mode: pull
     delegate_to: 37.139.33.6
