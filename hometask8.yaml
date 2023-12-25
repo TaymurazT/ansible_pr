@@ -27,14 +27,7 @@
   - name: build app
     shell: cd /home/ubuntu/jdk/Login; mvn package
 
-  - name: transport war 
-    synchronize:
-     src: /home/ubuntu/jdk/Login/targer/LoginWebApp.war
-     dest: /home/ubuntu/art
-     mode: push
-    delegate_to: 37.139.33.6
-     
-     
+  
      
     
 
@@ -50,10 +43,15 @@
 
   - name: Ensure LoginWebApp.war is present
     synchronize:
-     src: /home/ubuntu/art/
+     src: /home/ubuntu/jdk/Login/targer/LoginWebApp.war
      dest: /usr/local/tomcat9/webapps
      mode: pull
+    delegate_to: 37.139.33.6
   - name: Ensure tomcat service is started
     service:
      name: tomcat
      state: started
+
+
+
+   
