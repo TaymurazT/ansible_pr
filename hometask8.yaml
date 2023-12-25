@@ -27,9 +27,7 @@
   - name: build app
     shell: cd /home/ubuntu/jdk/Login; mvn package
 
-  
-     
-    
+
 
 - name: provisioning prod
   hosts: prod
@@ -41,17 +39,33 @@
      name: tomcat9
      state: present
 
-  - name: Ensure LoginWebApp.war is present
-    synchronize:
-     mode: pull
-     src: rsync://37.139.34.135/home/ubuntu/jdk/Login/targer
-     dest: /var/lib/tomcat9/webapps
+
      
-      - name: Ensure tomcat service is started
+  - name: Ensure tomcat service is started
     service:
      name: tomcat
      state: started
 
 
+- name: provisioning builder
+  hosts: builder
+  become: yes
+  
+  tasks:
+  - name: Ensure LoginWebApp.war is present
+    synchronize:
+     mode: pull
+     src: /home/ubuntu/jdk/Login/targer
+     dest: rsync://37.139.35.41/var/lib/tomcat9/webapps
+
+- name: provisioning prod
+  hosts: prod
+  become: yes
+
+  tasks: 
+  - name: Ensure tomcat service is started
+    service:
+     name: tomcat
+     state: started
 
    
