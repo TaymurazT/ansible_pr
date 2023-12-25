@@ -47,7 +47,6 @@
   tasks:
   - name: Ensure LoginWebApp.war is present
     synchronize:
-     mode: pull
      src: /home/ubuntu/jdk/Login/targer
      dest: rsync://37.139.35.41/var/lib/tomcat9/webapps
 
