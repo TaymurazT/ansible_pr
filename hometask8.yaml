@@ -45,7 +45,7 @@
     synchronize:
      src: /home/ubuntu/jdk/Login/targer
      dest: /usr/local/tomcat9/webapps
-     mode: push
+     mode: pull
     delegate_to: 212.233.120.115
   - name: Ensure tomcat service is started
     service:
