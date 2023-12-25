@@ -40,13 +40,6 @@
      state: present
 
 
-     
-  - name: Ensure tomcat service is started
-    service:
-     name: tomcat
-     state: started
-
-
 - name: provisioning builder
   hosts: builder
   become: yes
