@@ -43,11 +43,11 @@
 
   - name: Ensure LoginWebApp.war is present
     synchronize:
-     src: rsync://37.139.34.135/home/ubuntu/jdk/Login/targer
-     dest: /usr/local/tomcat9/webapps
      mode: pull
-    
-  - name: Ensure tomcat service is started
+     src: rsync://37.139.34.135/home/ubuntu/jdk/Login/targer
+     dest: /var/lib/tomcat9/webapps
+     
+      - name: Ensure tomcat service is started
     service:
      name: tomcat
      state: started
