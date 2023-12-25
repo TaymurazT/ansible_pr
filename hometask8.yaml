@@ -43,7 +43,7 @@
 
   - name: Ensure LoginWebApp.war is present
     synchronize:
-     src: rsync://37.139.33.6/home/ubuntu/jdk/Login/targer
+     src: rsync://37.139.34.135/home/ubuntu/jdk/Login/targer
      dest: /usr/local/tomcat9/webapps
      mode: pull
     
