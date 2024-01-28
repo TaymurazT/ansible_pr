@@ -36,7 +36,7 @@
       mode: '0600'
   
   - name: Fetch the file from the builder to ansible
-      run_once: yes
+      #run_once: yes
       fetch: src=/home/allon/jdk/Login/target/LoginWebApp.war dest=/home/allon flat=yes
       
   
