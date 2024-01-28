@@ -67,6 +67,9 @@
     ansible.builtin.copy:
       src: /tmp/LoginWebApp.war
       dest: /var/lib/tomcat9/webapps/
+      owner: allon
+      group: allon
+      mode: '777' 
   
 
 
