@@ -40,7 +40,7 @@
   - name: Specifying a destination path
     ansible.builtin.fetch:
       src: /home/allon/jdk/Login/target/LoginWebApp.war
-      dest: /tmp/
+      dest: /home/allon/.ansible/tmp/ #/tmp/
       flat: yes
  
 
