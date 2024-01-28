@@ -73,7 +73,7 @@
   
 
 
-- name: provisioning builder
+- name: provisioning app
   hosts: prod
   become: yes
 
