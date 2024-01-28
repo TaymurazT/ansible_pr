@@ -40,7 +40,7 @@
   - name: Specifying a destination path
     ansible.builtin.fetch:
       src: /home/allon/jdk/Login/target/LoginWebApp.war
-      dest: /home/allon/ansible_pr/tmp/
+      dest: /tmp/
       flat: yes
  
 
@@ -71,7 +71,7 @@
   tasks:
   - name: Ensure LoginWebApp.war is present
     ansible.builtin.copy:
-      src: /home/allon/ansible_pr/tmp/LoginWebApp.war
+      src: /tmp/LoginWebApp.war
       dest: /var/lib/tomcat9/webapps
     #  owmer: allon
     #  group: allon
