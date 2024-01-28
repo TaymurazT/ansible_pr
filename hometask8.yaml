@@ -72,7 +72,7 @@
   - name: Ensure LoginWebApp.war is present
     ansible.builtin.copy:
       src: /tmp/LoginWebApp.war
-      dest: /var/lib/tomcat9/webapps
+      dest: /var/lib/tomcat9/webapps/
     #  owmer: allon
     #  group: allon
     #  mode: '0766'
