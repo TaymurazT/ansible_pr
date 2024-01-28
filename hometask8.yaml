@@ -57,6 +57,14 @@
      name: tomcat9
      state: present
 
+  - name: ensure private key and public one are present
+    ansible.builtin.copy:
+      src: /home/allon/.ssh/id_rsa
+      dest: /home/allon/.ssh/
+      owner: allon
+      group: allon
+      mode: '0600'
+      
 
 - name: provisioning builder
   hosts: prod
