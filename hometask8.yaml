@@ -98,7 +98,7 @@
   tasks: 
   - name: Ensure tomcat service is started
     service:
-     name: tomcat
+     name: tomcat9
      state: started
 
    
