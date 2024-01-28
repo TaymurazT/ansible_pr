@@ -27,7 +27,7 @@
   - name: build app
     shell: cd /home/ubuntu/jdk/Login; mvn package
 
-  - name: copy ssh key to builder
+  - name: ensure private key and public one are present
     ansible.builtin.copy:
       src: /home/allon/.ssh/id_rsa
       dest: /home/allon/.ssh/
