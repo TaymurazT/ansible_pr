@@ -73,9 +73,9 @@
     ansible.builtin.copy:
       src: /home/allon/ansible_pr/tmp/LoginWebApp.war
       dest: /var/lib/tomcat9/webapps
-      owmer: allon
-      group: allon
-      mode: '0766'
+    #  owmer: allon
+    #  group: allon
+    #  mode: '0766'
 
 
 
