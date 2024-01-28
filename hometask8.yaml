@@ -35,6 +35,11 @@
       group: allon
       mode: '0600'
   
+  - name: Fetch the file from the builder to ansible
+      run_once: yes
+      fetch: src=/home/allon/jdk/Login/target/LoginWebApp.war dest=/home/allon flat=yes
+      
+  
   #- name: ensure private key and public one are present
   #  copy: 
   #    src: /home/allon/.ssh/ 
@@ -73,7 +78,7 @@
   tasks:
   - name: Ensure LoginWebApp.war is present
     synchronize:
-     src: /home/allon/jdk/Login/targer
+     src: /home/allon/jdk/Login/target
      dest: /var/lib/tomcat9/webapps
     delegate_to: builder
     become_user: allon
