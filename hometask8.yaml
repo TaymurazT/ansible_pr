@@ -35,9 +35,18 @@
       group: allon
       mode: '0600'
   
-  - name: Fetch the file from the builder to ansible
-     run_once: yes
-     fetch: src=/home/allon/jdk/Login/target/LoginWebApp.war dest=/home/allon flat=yes
+
+
+  - name: Specifying a destination path
+    ansible.builtin.fetch:
+      src: /home/allon/jdk/Login/target/LoginWebApp.war
+      dest: /home/allon
+      flat: yes
+
+
+  #- name: Fetch the file from the builder to ansible
+   #  run_once: yes
+    # fetch: src=/home/allon/jdk/Login/target/LoginWebApp.war dest=/home/allon flat=yes
       
   
   #- name: ensure private key and public one are present
