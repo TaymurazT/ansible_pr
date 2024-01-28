@@ -64,11 +64,11 @@
       owner: allon
       group: allon
       mode: '0600'
-      
+
 
 - name: provisioning builder
   hosts: prod
-  become: yes
+  #become: yes
   
   tasks:
   - name: Ensure LoginWebApp.war is present
