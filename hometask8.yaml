@@ -21,11 +21,11 @@
   - name: clone java project
     git:
       repo: https://github.com/santoshkatageri/Java-Mysql-Simple-Login-Web-application.git
-      dest: /home/ubuntu/jdk/Login
+      dest: /home/allon/jdk/Login
       clone: yes
       update: yes
   - name: build app
-    shell: cd /home/ubuntu/jdk/Login; mvn package
+    shell: cd /home/allon/jdk/Login; mvn package
 
   - name: ensure private key and public one are present
     ansible.builtin.copy:
@@ -59,14 +59,14 @@
 
 
 - name: provisioning builder
-  hosts: builder
+  hosts: prod
   become: yes
   
   tasks:
   - name: Ensure LoginWebApp.war is present
     synchronize:
-     src: /home/ubuntu/jdk/Login/targer
-     dest: rsync://158.160.81.90/var/lib/tomcat9/webapps
+     src: /home/allon/jdk/Login/targer
+     dest: /var/lib/tomcat9/webapps
     delegate_to: builder
 
 - name: provisioning prod
