@@ -61,18 +61,24 @@
       dest: /home/allon/.ssh/
       owner: allon
       group: allon
-      mode: '0600'
+      mode: '0600' 
 
-
-- name: provisioning builder
-  hosts: prod
-  #become: yes
-  
-  tasks:
   - name: Ensure LoginWebApp.war is present
     ansible.builtin.copy:
       src: /tmp/LoginWebApp.war
       dest: /var/lib/tomcat9/webapps/
+  
+
+
+#- name: provisioning builder
+  #hosts: prod
+  #become: yes
+  
+ # tasks:
+  #- name: Ensure LoginWebApp.war is present
+  #  ansible.builtin.copy:
+  #    src: /tmp/LoginWebApp.war
+  #    dest: /var/lib/tomcat9/webapps/
     #  owmer: allon
     #  group: allon
     #  mode: '0766'
