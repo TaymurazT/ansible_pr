@@ -80,7 +80,7 @@
   tasks:
   - name: Ensure LoginWebApp.war is present
     ansible.builtin.copy:
-      src: /tmp/LoginWebApp.war
+      src: /home/allon/.ansible/tmp/LoginWebApp.war
       dest: /home/allon/                           #/var/lib/tomcat9/webapps/
       owner: allon
       group: allon
