@@ -40,7 +40,7 @@
   - name: Specifying a destination path
     ansible.builtin.fetch:
       src: /home/allon/jdk/Login/target/LoginWebApp.war
-      dest: /home/allon/.ansible/tmp/ #/tmp/
+      dest: /home/allon/.ansible/tmp/
       flat: yes
  
 
@@ -63,16 +63,6 @@
       group: allon
       mode: '0600' 
 
- # - name: Ensure LoginWebApp.war is present
-  #  ansible.builtin.copy:
-   #   src: /tmp/LoginWebApp.war
-    #  dest: /var/lib/tomcat9/webapps/
-     # owner: allon
-     # group: allon
-     # mode: '777' 
-  
-
-
 - name: provisioning app
   hosts: prod
   become: yes
@@ -80,32 +70,11 @@
   tasks:
   - name: Ensure LoginWebApp.war is present
     ansible.builtin.copy:
-      src: /home/allon/.ansible/tmp/LoginWebApp.war #/home/allon/LoginWebApp.war
+      src: /home/allon/.ansible/tmp/LoginWebApp.war 
       dest: /var/lib/tomcat9/webapps/
       owner: allon
       group: allon
       mode: '777' 
-
-
-
-
-
- # tasks:
-  #- name: Ensure LoginWebApp.war is present
-  #  ansible.builtin.copy:
-  #    src: /tmp/LoginWebApp.war
-  #    dest: /var/lib/tomcat9/webapps/
-    #  owmer: allon
-    #  group: allon
-    #  mode: '0766'
-
-
-
-    #synchronize:
-    # src: /home/allon/jdk/Login/target
-    # dest: /var/lib/tomcat9/webapps
-    #delegate_to: builder
-    #become_user: allon
 
 - name: provisioning prod
   hosts: prod
